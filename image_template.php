@@ -3,7 +3,7 @@
   ini_set('display_errors',1);
   error_reporting(-1);
 
-  $image_file = '1.jpg';
+  $image_file = '6.jpg';
   $src = imagecreatefromjpeg($image_file);
 
   $resize = array ( // height => widths (array)
@@ -64,7 +64,7 @@
     }
     else {
       //Calculate new ratio
-      $newR = $r - ($resizedWidth / $newWidth);
+      $newR = abs($r - ($resizedWidth / $newWidth));
       
       //Get new width & height base on new ratio
       $newHeight = $imgHeight / $newR;
@@ -119,7 +119,7 @@
     }
     else {
       //Calculate new ratio
-      $newR = $r - ($resizedHeight / $newHeight);
+      $newR = abs($r - ($resizedHeight / $newHeight));
       
       //Get new width & height base on new ratio
       $newHeight = $imgHeight / $newR;
